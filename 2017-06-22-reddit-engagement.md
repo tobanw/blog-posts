@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Find your community: increasing reddit user engagement"
+title: "Find Your Community: Increasing user engagement at Reddit"
 date:   2017-06-22 20:00:00
 type: post
 ---
@@ -28,8 +28,10 @@ I set out to find what behaviors are characteristic of engaged reddit users, and
 As reddit content is entirely user-generated, I decided to focus on commenting behavior as a proxy for adding value to the reddit experience.
 Comments are an integral part of reddit — as many a redditor knows, discussions in the comments often contain some of the most valuable content.
 For each user, I calculated the *number of monthly comments* as a metric for user engagement.
-For reddit, more comments make the site better on the whole, which brings in more visitors and hence pageviews.
-As reddit earns 95% of its revenue from ads, the number of comments per user is a key metric for the business.
+For reddit, more comments make the site better on the whole, which brings in more visitors and pageviews.
+As reddit earns 95% of its revenue from ads, this is very important to the success of the business.
+
+### Frontpage vs subreddits
 
 The distinction between the reddit frontpage and other subreddits is the key divide in the reddit experience.
 The frontpage surfaces excellent content with broad appeal and is extremely popular.
@@ -37,14 +39,16 @@ However, the frontpage default subreddits only produce 17% of all reddit comment
 Other subreddits vary widely, but many thriving communities are based around a specific interest, such as [r/coffee](https://www.reddit.com/r/Coffee/).
 
 I was interested to see how user behavior differed across this divide.
-Based on my personal experience with reddit, I suspected that people would get the most value out of reddit by going beyond the frontpage and finding subreddits related to their specific interests. 
-As a result, they would become more engaged in those communities and leave more comments overall. 
+Based on my experience as a redditor, I suspected that people would get the most value out of reddit by going beyond the frontpage and finding subreddits related to their specific interests.
+As a result, they would become more engaged in those communities and leave more comments overall.
 However, given the popularity of the frontpage, it wasn't obvious that this would be true.
 
 What I found was that redditors who participate in communities beyond the frontpage are indeed more engaged users.
 To measure this, I grouped users by the percentage of comments they made on posts outside of the frontpage default subreddits.
 Then I calculated the average number of comments for each group.
 As I expected, it increased as users shifted their activity beyond the frontpage.
+
+### Alternative explanations
 
 To increase my confidence that this relationship is causal, I did some additional checks to rule out alternative explanations.
 My main concern was that user tenure drives both effects: users with longer tenure both comment more and participate more broadly in other communities.
@@ -53,9 +57,12 @@ To rule this out, I did the same analysis within cohorts, so that everyone would
 I also excluded outliers to ensure that the average wasn't being skewed by a few extremely active users.
 The finding withstood these robustness checks — of course, the relationship could be an artifact of some other selection bias, but it increases my confidence in the causal interpretation.
 
+## Results
+
 The chart below shows the results for the cohort that made their first comment between November and December of 2016, and is limited to users with 5-150 comments per month.
 It shows that "frontpage-focused" users (0-20% of comments outside of frontpage subreddits) have the lowest engagement with an average of 22 comments per month.
 Engagement increases to an average of 27 comments per month for the group having 60-80% of comments outside of frontpage subreddits.
+(The results are similar for other cohorts and all differences are statistically significant.)
 
 ![engagement-chart](http://i.imgur.com/a3OJn7N.png)
 
