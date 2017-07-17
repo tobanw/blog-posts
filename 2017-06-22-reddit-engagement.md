@@ -59,21 +59,24 @@ The finding withstood these robustness checks — of course, the relationship co
 
 ## Results
 
-The chart below shows the results for the cohort that made their first comment between November and December of 2016, and is limited to users with 5-150 comments per month.
-It shows that "frontpage-focused" users (0-20% of comments outside of frontpage subreddits) have the lowest engagement with an average of 22 comments per month.
-Engagement increases to an average of 27 comments per month for the group having 60-80% of comments outside of frontpage subreddits.
-(The results are similar for other cohorts and all differences are statistically significant.)
+The chart below shows the results averaged over the four monthly cohorts that made their first comment between July and October of 2016, measured in their 6th month of tenure (from the month of their first comment).
+It is also limited to users with 5-150 comments per month, to exclude outliers and low comment counts which could skew the results.
+It shows that "frontpage-focused" users (0-20% of comments outside of frontpage subreddits) have the lowest engagement with an average of 22.8 comments per month.
+Engagement increases to an average of 27.8 comments per month for the group having 60-80% of comments outside of frontpage subreddits.
+The difference between the first two groups is 2.55 with a 99% confidence interval of (1.69, 3.41).
+The results are similar for other cohorts as well.
 
-![engagement-chart](http://i.imgur.com/a3OJn7N.png)
+![engagement-chart](http://i.imgur.com/GQtdM93.png)
 
 (Note: I excluded the 80-100% group, which is almost entirely composed of users who never comment on frontpage subreddits.
 This group is large and behaves very differently — likely because they joined reddit to participate in a specific subreddit, with no interest in the frontpage.
 As my focus is on increasing engagement for frontpage-focused users, I restricted my analysis to users with at least some frontpage engagement.)
 
 Furthermore, there are many users in this frontpage-focused group.
-Adding bars for user counts to the previous chart reveals that there is considerable scope for helping these users discover other communities. 
+The chart below adds bars for the number of users in each group (the average number per monthly cohort).
+Reddit can target this sizable frontpage-focused group to increase their engagement.
 
-![counts-chart](http://i.imgur.com/D4iAXxK.png)
+![counts-chart](http://i.imgur.com/xpmMgsZ.png)
 
 Based on this evidence, I concluded that reddit should do more to help frontpage-focused users discover other communities.
 Reddit has a very useful subreddit discovery feature, but it's not very prominent in the user interface.
@@ -112,11 +115,11 @@ I set the power at $$1 - \beta = 0.9$$ to reflect less concern about false negat
 This way, a positive result would be very strong grounds for implementing the feature.
 
 The minimum detectable effect size that would be worthwhile should be based on the tradeoff between the value of additional comments and the opportunity cost of sidebar space (which would otherwise be ad space).
-As I don't have this information, I chose an intuitively plausible effect of 5%, or 1 extra comment per user per month, on average.
+As I don't have this information, I chose an intuitively plausible effect of 5%, or about 1 extra comment per user per month, on average.
 This corresponds to an effect size of $$d = 0.05$$.
 
 To reduce the number of users exposed to the new feature, I use an unbalanced design with a much larger control group.
-I started from a total sample size of 27,000 users because that is roughly the number of frontpage-focused users in the 2016 cohorts.
+I started from a total sample size of 27,000 users because that is roughly the number of frontpage-focused users among all of the 2016 cohorts.
 This is more than enough for a balanced design, so I minimized the treatment group size subject to the other constraints.
 This gave me a sample size of 7,000 users in the treatment group and 20,000 users in the control group.
 
