@@ -21,10 +21,10 @@ In your shell configuration (e.g., `~/.bashrc`), change the line added by the An
 
 ```bash
 # Default configuration of Anaconda installer
-#export PATH="/home/toban/utilities/anaconda3/bin:$PATH"
+#export PATH="/path/to/anaconda3/bin:$PATH"
 
 # Append Anaconda so that it doesn't override system Python
-export PATH="$PATH:/home/toban/utilities/anaconda3/bin"
+export PATH="$PATH:/path/to/anaconda3/bin"
 ```
 
 Now, `python` (and `curl`, for example) will still be the system version, but Anaconda applications will also be available (`jupyter`, `ipython`, `conda`, etc).
