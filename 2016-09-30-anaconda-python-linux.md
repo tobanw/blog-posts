@@ -41,21 +41,32 @@ source deactivate
 The `root` environment uses the standard Anaconda `python` installation, so to activate the Anaconda's `python`, just do `source activate root`.
 (Note: this only affects the current shell session).
 
-#### Bonus: Python auto-completion in Vim
+#### Bonus: Python linting and auto-completion in Vim
 
-Since `vim` (and `neovim`) are compiled against the system `python`, they won't get completions from Anaconda packages.
-However, the (`neovim`-only) python completions package [`deoplete-jedi`][deoplete] allows you to specify which `python` interpreter to use for the completion server.
-Add the following line to your config (with the correct path):
+Since Vim (and Neovim) are compiled against the system `python`, they won't work with your Anaconda packages by default.
+For example, running [pylint][pylint] as a syntax checker in [Syntastic][syntastic] or [Neomake][neomake] will use the system `python` and give errors when you import Anaconda packages.
+The solution is very simple: just include your Anaconda package directory in the `PYTHONPATH` environment variable.
+This way, the system python will be able to import the Anaconda packages.
+
+In your shell configuration (e.g., `~/.bashrc`), append your Anaconda `site-packages` directory as such:
+
+```bash
+export PYTHONPATH="$PYTHONPATH:/path/to/anaconda3/lib/python3.6/site-packages"
+```
+
+Also, the (Neovim-only) python completions package [`deoplete-jedi`][deoplete] allows you to specify which `python` interpreter to use for the completion server.
+It seems that setting `PYTHONPATH` isn't sufficient (for example, I couldn't get `pandas` completions to work).
+Add the following line to your Vim config (with the correct path):
 
 ```vim
 let g:deoplete#sources#jedi#python_path = '/path/to/anaconda3/bin/python'
 ```
-
-Another simple (although slightly ugly) workaround is to install any packages you want completions for via the system `pip` or with your system's package manager.
-Then, while you'll run your code with Anaconda, `vim` can at least pull completions from the corresponding system Python packages.
 
 [continuum]:https://www.continuum.io/
 [conda]:http://conda.pydata.org/docs/
 [rtv]:https://github.com/michael-lazar/rtv
 [jupyter]:http://jupyter.org/
 [deoplete]:https://github.com/zchee/deoplete-jedi
+[pylint]:https://www.pylint.org/
+[syntastic]:https://github.com/vim-syntastic/syntastic
+[neomake]:https://github.com/neomake/neomake
