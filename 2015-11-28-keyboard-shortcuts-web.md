@@ -33,7 +33,7 @@ That's it: incredibly simple.
 ### Blog post navigation
 
 Adding j/k navigation was a little more complicated.
-I wrote [a function](https://github.com/tobanw/tobanw.github.io/blob/master/assets/scripts/keyboard.js) `blogNav` which takes key and does the following:
+I wrote [a function](https://github.com/tobanw/tobanw.github.io/blob/master/assets/scripts/keyboard.js) `blogNav` which takes a key press and does the following:
 
 - gets a list of all the post links (using their unique class, `post-link`)
 - gets the currently focused element
