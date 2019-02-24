@@ -5,8 +5,8 @@ See [this guide](http://jry.io/posts/make-your-jekyll-blog-awesome-with-git-subm
 
 ## Usage
 
-To keep things simple, write posts in the actual repo.
-Don't edit the submodule.
+To keep things simple, write posts in the actual "blog posts" repo.
+Don't edit the submodule in the jekyll repo.
 The usual workflow is:
 
 1. In the `blog-posts` repo: write posts and push to the remote when ready
