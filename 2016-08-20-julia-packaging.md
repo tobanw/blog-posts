@@ -4,6 +4,12 @@ title:  "Make your own Julia packages"
 date:   2016-08-20 20:30:00
 type: post
 ---
+
+\[
+**Update**: with the release of Julia 1.0, the package manager, `Pkg`, was completely rewritten, though it remains quite similar.
+Check out [the `Pkg` documentation][pkg] to see what's new.
+\]
+
 [Julia][julia] is a fantastic language for scientific computing and as a result is gaining traction among researchers.
 In research projects, it often happens that you need to write code which could be generalized and reused.
 For example, in a recent project, I coded up a [marriage market model][marriagemarkets] as a component of a larger model.
@@ -11,9 +17,9 @@ The best way to make such code reusable is to create a package (most languages p
 
 Julia provides a convenient way to create a new package.
 As explained in [the manual][packages], `Pkg.generate("NewPackage", "MIT")` initializes a git repo containing the package structure for a package named `NewPackage` with an MIT license.
-If you configure your GitHub username in git (`git config --global github.user "USERNAME"` ), it will even configure the remote repository (which you'll still need to create in GitHub).
+If you configure your GitHub username in git (`git config --global github.user "USERNAME"`), it will even configure the remote repository (which you'll still need to create in GitHub).
 
-Since the Julia package directory isn't a very convenient location for developing your package (`~/.julia/v0.4/`), I recommend moving your package (cut and paste) to your desired location and then symlinking it to the Julia package directory (`ln -s your/directory/NewPackage ~/.julia/v0.4/NewPackage`).
+Since the Julia package directory isn't a very convenient location for developing your package (e.g., `~/.julia/v0.4/`), I recommend moving your package (cut and paste) to your desired location and then symlinking it to the Julia package directory (`ln -s your/directory/NewPackage ~/.julia/v0.4/NewPackage`).
 
 Converting your code into a package takes a few simple steps.
 `src/NewPackage.jl` contains the actual module that users will import.
@@ -36,6 +42,7 @@ The manual also has instructions for registering your package as an official Jul
 Look at [my package][marriagemarkets] for a simple example.
 The [QuantEcon][quantecon] package is a more comprehensive example that I drew on in making my package.
 
+[pkg]:https://julialang.github.io/Pkg.jl/v1/creating-packages/
 [julia]:http://julialang.org/
 [packages]:http://docs.julialang.org/en/release-0.4/manual/packages/#creating-a-new-package
 [modules]:http://docs.julialang.org/en/release-0.4/manual/modules/
