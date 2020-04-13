@@ -126,7 +126,7 @@ For example, you could simultaneously have a very confident prediction of the ou
 	⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠒⠤⢄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸
 	⠒⢺⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠛⠛⠛⠒⠒⠒⠒⠒⠒⠒X⠒⠒⠒⠒⠒⠒⠒⢺
 
-Or you could have a very uncertain prediction of the outcome with very little model uncertainty --- a tightly distributed posterior distribution centered on the prior probability:
+Or you could have a very unconfident prediction of the outcome with very little model uncertainty --- a tightly distributed posterior distribution centered on the prior probability:
 
 	  Uncertain prediction, confident model
 	⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡀⠀⠀⠀⠀⠀⠀⡇
@@ -157,7 +157,7 @@ The argument I've made here can be summed up as:
 1. A probability prediction is a full probability distribution and so it inherently quantifies uncertainty --- it's a misconception to think that you need a confidence interval to express uncertainty
 2. Model uncertainty propagates through to produce an additional (but orthogonal) layer of uncertainty over the outcome
 
-This may seem obvious in retrospect, but it's always good to gain clarity on the fundamentals, where intuition can overpower reason.
+This may seem obvious in retrospect, but it's always good to gain clarity on the fundamentals, where confused intuitions may lurk unnoticed.
 Here, intuitions such as "a scalar prediction must be a point estimate" and "you need a confidence interval to express uncertainty" are highly misleading.
 
 In this case, understanding the distinct sources of uncertainty has resolved some confusion I had about prediction markets and machine learning model predictions.
