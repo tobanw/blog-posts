@@ -23,8 +23,10 @@ Below, I'll show that there are two distinct sources of uncertainty that are bei
 The key distinction here is between:
 
 1. Uncertainty over the outcome, $$X$$ vs $$\neg X$$
-	* (the symbol "$$\neg$$" is the negation operator and can be read as "not")
+	* Also known as [aleatoric uncertainty](https://en.wikipedia.org/wiki/Uncertainty_quantification#Aleatoric_and_epistemic_uncertainty)
+	* (FYI: the symbol "$$\neg$$" is the negation operator and can be read as "not")
 2. Uncertainty over model parameters which are used to generate a prediction for the outcome
+	* Also known as [epistemic uncertainty](https://en.wikipedia.org/wiki/Uncertainty_quantification#Aleatoric_and_epistemic_uncertainty)
 
 Let's unpack each case in depth.
 
