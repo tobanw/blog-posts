@@ -56,18 +56,25 @@ On the other hand, if your information strongly supports $$\neg X$$, then your p
 Thus, your degree of confidence is revealed by the degree to which your probability moves away from the baseline and toward 0 or 1.
 
 You can use Bayes' Theorem to play with some numbers yourself.
-Denote your prior by $$p := Pr[X]$$, and assume you've used your information $$D$$ to compute the likelihood $$q := Pr[D \mid X]$$.
-Then compute the posterior:
+Denote your prior by $$p := Pr[X]$$, and assume you've used your information $$D$$ to compute the likelihoods $$q(X) := Pr[D \mid X]$$ and $$q(\neg X) := Pr[D \mid \neg X]$$.
+Denote the likelihood ratio by $$\lambda := q(X) / q(\neg X)$$.
 
-$$
-Pr[X \mid D] = \frac{pq}{pq + (1-p)(1-q)}
-$$
+Then compute the posterior and rearrange in terms of the likelihood ratio:
 
-If you play with this formula for different values of $$p$$ and $$q$$, you'll get a sense of how the information in the likelihood $$q$$ updates the posterior probability.
-Notice that when $$q=1/2$$, it cancels itself out and the posterior reduces to $$p$$, the prior.
-Thus, when your information is uninformative, it leaves your prior belief unchanged.
-Furthermore, you can show that for any prior belief $$p$$, if $$q > 0.5$$, then your posterior will be pushed upward from your prior (and vice versa).
-That is, any information in favor of $$X$$ will increase your confidence in $$X$$; even if $$p=0.999$$, a value of $$q=0.501$$ will still increase your certainty in the outcome.
+$$\begin{aligned}
+Pr[X \mid D] &= \frac{p \cdot q(X)}{p \cdot q(X) + (1-p)q(\neg X))}\\
+&= \frac{p \cdot q(X)/q(\neg X)}{p \cdot q(X)/q(\neg X) + (1-p)}\\
+&= \frac{p \cdot \lambda}{p \cdot \lambda + (1-p)}
+\end{aligned}$$
+
+Note that the posterior can be expressed purely in terms of the prior and the likelihood ratio (i.e., it doesn't depend on the individual likelihoods).
+This means that the magnitudes of the likelihoods don't matter; all that matters is their ratio, which indicates how much the information $$D$$ favors $$X$$ *relative to* $$\neg X$$.
+
+If you play with this formula, you'll get a sense of how the information in the likelihoods updates the prior to a posterior probability.
+Notice that when $$\lambda = 1$$, the posterior reduces to $$p$$, the prior.
+In other words, when $$D$$ is uninformative about $$X$$, it leaves your prior belief unchanged.
+Furthermore, for any prior belief $$p$$, if $$\lambda > 1$$, then your posterior will be pushed upward from your prior (and vice versa for $$\lambda < 1$$).
+That is, any information in favor of $$X$$ will increase your confidence in $$X$$ --- even if $$p=0.999$$!
 
 Judging the quality of probability predictions is simple: just check that they're [calibrated](https://scikit-learn.org/stable/modules/calibration.html).
 For example, predictions made with, 80% confidence should be correct 80% of the time.
